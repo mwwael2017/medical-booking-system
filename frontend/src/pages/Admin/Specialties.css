@@ -1,0 +1,65 @@
+/* Admin Specialties Styles */
+.admin-specialties {
+    padding-bottom: 2rem;
+}
+
+/* Header & Title */
+.specialties-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.add-specialty-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--admin-accent);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.4);
+}
+
+.add-specialty-btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(59, 130, 246, 0.5);
+}
+
+/* Table Name & Description */
+.specialty-name {
+    font-weight: 600;
+    color: var(--admin-text-main);
+    font-size: 0.95rem;
+}
+
+.specialty-desc {
+    font-size: 0.85rem;
+    color: var(--admin-text-muted);
+    max-width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Modal Specifics */
+.specialty-icon-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px dashed var(--admin-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--admin-text-muted);
+}

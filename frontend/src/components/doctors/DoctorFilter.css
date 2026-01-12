@@ -1,0 +1,275 @@
+/* Main Sidebar Container */
+.doctor-filter {
+    background: rgba(15, 23, 42, 0.6);
+    /* Semi-transparent dark bg */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Section Headers */
+.filter-group h3 {
+    margin: 0 0 1rem 0;
+    color: #94a3b8;
+    /* Muted text */
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Individual Filter Sections */
+.filter-group {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 2rem;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Accordion Trigger (Button) */
+.dropdown-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: #e2e8f0;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.dropdown-trigger:hover {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-trigger.active {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    color: white;
+}
+
+.dropdown-arrow {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: #94a3b8;
+}
+
+.dropdown-trigger.active .dropdown-arrow {
+    color: #3b82f6;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+/* Dropdown/Accordion Body */
+.dropdown-menu {
+    margin-top: 1rem;
+    padding-left: 0.5rem;
+    animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-item {
+    padding: 0.6rem 1rem;
+    color: #cbd5e1;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    padding-left: 1.25rem;
+    /* Slight slide effect */
+}
+
+.dropdown-item.selected {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    font-weight: 500;
+}
+
+/* Price Filter Specifics */
+.price-dropdown-content {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-top: 1rem;
+    box-shadow: none;
+}
+
+.price-inputs-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.price-input-group {
+    flex: 1;
+}
+
+.price-input-group label {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 0.6rem 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.input-wrapper .currency {
+    color: #64748b;
+    margin-right: 0.25rem;
+    font-weight: 500;
+}
+
+.input-wrapper input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.price-inputs-row .separator {
+    color: #64748b;
+    margin-top: 1.2rem;
+    /* Align with input box */
+}
+
+/* Slider Styling */
+.dual-slider-container {
+    padding: 0.5rem 0 1.5rem 0;
+    position: relative;
+    height: 40px;
+}
+
+.slider-track {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #334155;
+    border-radius: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.dual-range-slider {
+    position: absolute;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: transparent;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dual-range-slider::-webkit-slider-thumb {
+    pointer-events: all;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #3b82f6;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px #0f172a, 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: -7px;
+    /* (height 4px - thumb 18px) / 2 */
+    transition: transform 0.1s;
+}
+
+.dual-range-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: #2563eb;
+}
+
+/* Slider Labels */
+.slider-labels {
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Trigger Content Icon */
+.trigger-content {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.trigger-icon {
+    color: #64748b;
+}
+
+.dropdown-trigger.active .trigger-icon {
+    color: #60a5fa;
+}
+
+.price-title {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .doctor-filter {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+}
